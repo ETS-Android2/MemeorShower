@@ -10,11 +10,19 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="409dp"
-            android:layout_height="729dp"
+            android:layout_width="407dp"
+            android:layout_height="644dp"
             android:id="@+id/text_list" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:itemCount="25" android:scrollbars="vertical" app:layout_constraintVertical_bias="1.0"
             tools:listitem="@layout/recycler_view_item"/>
+    <Button
+            android:text="Next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/NextToImageTemplateButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/text_list" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.789"
+            app:layout_constraintVertical_bias="0.579"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

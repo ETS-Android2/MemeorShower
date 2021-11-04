@@ -1,10 +1,13 @@
 package com.example.memeorshower
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.memeorshower.databinding.ActivityMainBinding
 
 class TextTemplate : AppCompatActivity() {
     lateinit var texts: ArrayList<String>
@@ -13,6 +16,12 @@ class TextTemplate : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_text_template)
+
+        val rollButton: Button = findViewById(R.id.NextToImageTemplateButton)
+        rollButton.setOnClickListener {
+            nextPageToImageTemplate()
+        }
+
 
         val texts = ArrayList<String>()
         val images = ArrayList<Int>()
@@ -30,5 +39,10 @@ class TextTemplate : AppCompatActivity() {
         // Set layout manager to position the items
         text_lists.layoutManager = LinearLayoutManager(this)
 
+    }
+
+    private fun nextPageToImageTemplate() {
+        val intent = Intent(this, ImageTemplate::class.java)
+        startActivity(intent)
     }
 }
