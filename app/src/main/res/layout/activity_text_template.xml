@@ -14,6 +14,7 @@
             android:layout_height="729dp"
             android:id="@+id/text_list" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" tools:listitem="@layout/recycler_view_item"
-            tools:itemCount="25" android:scrollbars="vertical" app:layout_constraintVertical_bias="1.0"/>
+            app:layout_constraintStart_toStartOf="parent"
+            tools:itemCount="25" android:scrollbars="vertical" app:layout_constraintVertical_bias="1.0"
+            tools:listitem="@layout/recycler_view_item"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
