@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun makeNewMeme() {
-        val  intent = Intent(this, MyProjects::class.java)
+        val  intent = Intent(this, TextTemplate::class.java)
         startActivity(intent)
     }
 }
