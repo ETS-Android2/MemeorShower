@@ -1,5 +1,6 @@
 package com.example.memeorshower
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.memeorshower.databinding.ActivityMainBinding
@@ -19,14 +20,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showDatabase() {
-        TODO("Not yet implemented")
+       val  intent = Intent(this, MyProjects::class.java)
+        startActivity(intent)
     }
 
     private fun showMyProjects() {
-        TODO("Not yet implemented")
+        val  intent = Intent(this, MyProjects::class.java)
+        startActivity(intent)
     }
 
     private fun makeNewMeme() {
-        TODO("Not yet implemented")
+        val  intent = Intent(this, MyProjects::class.java)
+        startActivity(intent)
     }
 }
+

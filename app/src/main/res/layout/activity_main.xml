@@ -30,8 +30,13 @@
     <ImageView
             android:layout_width="259dp"
             android:layout_height="274dp"
-            app:srcCompat="@drawable/memeIcon" android:id="@+id/imageView"
+            app:srcCompat="@drawable/meme_icon" android:id="@+id/imageView"
             app:layout_constraintBottom_toTopOf="@+id/NewButton"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="74dp"
+            android:layout_height="729dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:id="@+id/recyclerView"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
