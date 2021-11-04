@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showDatabase() {
-       val  intent = Intent(this, MyProjects::class.java)
+       val  intent = Intent(this, MemeDatabase::class.java)
         startActivity(intent)
     }
 
