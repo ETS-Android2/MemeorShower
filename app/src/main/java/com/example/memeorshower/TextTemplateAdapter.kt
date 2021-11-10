@@ -27,7 +27,7 @@ RecyclerView.Adapter<TextTemplateAdapter.ViewHolder>(){
             val context = holder.itemView.context
             //TODO MemeDatabase assign in intent just for test remember to change this
 
-            val intent = Intent(context, MemeDatabase::class.java)
+            val intent = Intent(context, ImageTemplate::class.java)
 
             context.startActivity(intent)
 
