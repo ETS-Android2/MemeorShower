@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         binding.NewButton.setOnClickListener { makeNewMeme() }
         binding.MyProjectButton.setOnClickListener { showMyProjects() }
         binding.DatabaseButton.setOnClickListener { showDatabase() }
+        
 
 
     }
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     private fun showMyProjects() {
         val  intent = Intent(this, MyProjects::class.java)
         startActivity(intent)
+
     }
 
     private fun makeNewMeme() {
