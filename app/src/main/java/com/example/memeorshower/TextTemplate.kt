@@ -27,7 +27,7 @@ class TextTemplate : AppCompatActivity() {
         val images = ArrayList<Int>()
         for (i in 1..20) {
             texts.add("Asbbbb"+ i)
-            images.add(R.mipmap.ic_launcher)
+            images.add(R.drawable.shower_thought)
         }
 
         val text_lists = findViewById<View>(R.id.text_list) as RecyclerView

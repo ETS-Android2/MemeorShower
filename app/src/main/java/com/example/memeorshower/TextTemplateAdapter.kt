@@ -1,5 +1,6 @@
 package com.example.memeorshower
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,6 +23,15 @@ RecyclerView.Adapter<TextTemplateAdapter.ViewHolder>(){
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemTitle.text = titles[position]
         holder.itemImage.setImageResource(images[position])
+        holder.itemImage.setOnClickListener{
+            val context = holder.itemView.context
+            //TODO MemeDatabase assign in intent just for test remember to change this
+
+            val intent = Intent(context, MemeDatabase::class.java)
+
+            context.startActivity(intent)
+
+        }
     }
 
     override fun getItemCount(): Int {
