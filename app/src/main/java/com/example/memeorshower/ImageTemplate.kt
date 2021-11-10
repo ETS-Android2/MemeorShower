@@ -25,7 +25,7 @@ class ImageTemplate : AppCompatActivity() {
         image_lists.adapter = adapter
         // Set layout manager to position the items
         //todo what's this shit spancount
-        image_lists.layoutManager = GridLayoutManager(this, 20)
+        image_lists.layoutManager = GridLayoutManager(this , 2)
 
 
     }

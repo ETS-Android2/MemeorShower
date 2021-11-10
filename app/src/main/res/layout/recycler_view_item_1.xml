@@ -4,4 +4,4 @@
            android:layout_width="50dp"
            android:layout_height="50dp"
            android:layout_margin="5dp"
-           tools:src="@tools:sample/avatars"/>
+           tools:src="@mipmap/ic_launcher"/>
