@@ -23,15 +23,7 @@ RecyclerView.Adapter<TextTemplateAdapter.ViewHolder>(){
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemTitle.text = titles[position]
         holder.itemImage.setImageResource(images[position])
-        holder.itemImage.setOnClickListener{
-            val context = holder.itemView.context
-            //TODO MemeDatabase assign in intent just for test remember to change this
 
-            val intent = Intent(context, ImageTemplate::class.java)
-
-            context.startActivity(intent)
-
-        }
     }
 
     override fun getItemCount(): Int {
