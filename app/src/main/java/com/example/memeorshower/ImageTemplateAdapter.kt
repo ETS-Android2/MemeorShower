@@ -1,11 +1,13 @@
 package com.example.memeorshower
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 
 data class DataModel(
@@ -32,6 +34,7 @@ class ImageTemplateAdapter (var context: Context):
             title = itemView.findViewById(R.id.title)
             desc = itemView.findViewById(R.id.text)
         }
+
 
     }
     // Usually involves inflating a layout from XML and returning the holder
