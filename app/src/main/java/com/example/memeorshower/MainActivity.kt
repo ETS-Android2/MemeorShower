@@ -21,18 +21,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showDatabase() {
-       val  intent = Intent(this, MemeDatabase::class.java)
+       val  intent = Intent(this, MemeDatabaseActivity::class.java)
         startActivity(intent)
     }
 
     private fun showMyProjects() {
-        val  intent = Intent(this, MyProjects::class.java)
+        val  intent = Intent(this, MyProjectsActivity::class.java)
         startActivity(intent)
 
     }
 
     private fun makeNewMeme() {
-        val  intent = Intent(this, TextTemplate::class.java)
+        val  intent = Intent(this, TextTemplateActivity::class.java)
         startActivity(intent)
     }
 }

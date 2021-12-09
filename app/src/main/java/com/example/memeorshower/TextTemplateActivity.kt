@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.memeorshower.adapter.TextTemplateAdapter
 
-class TextTemplate : AppCompatActivity() {
+class TextTemplateActivity : AppCompatActivity() {
     lateinit var texts: ArrayList<String>
     lateinit var images: ArrayList<Int>
 
@@ -47,7 +47,7 @@ class TextTemplate : AppCompatActivity() {
     }
 
     private fun nextPageToImageTemplate() {
-        val intent = Intent(this, ImageTemplate::class.java)
+        val intent = Intent(this, ImageTemplateActivity::class.java)
         startActivity(intent)
     }
 }

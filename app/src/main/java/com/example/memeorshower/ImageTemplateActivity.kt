@@ -9,7 +9,7 @@ import com.example.memeorshower.adapter.ImageTemplateAdapter
 import com.example.memeorshower.model.DataModel
 
 
-class ImageTemplate : AppCompatActivity() {
+class ImageTemplateActivity : AppCompatActivity() {
     private lateinit var  photoAdapter: ImageTemplateAdapter
     private var dataList = mutableListOf<DataModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +23,7 @@ class ImageTemplate : AppCompatActivity() {
 
         // Initialize contacts
         // Create adapter passing in the sample user data
-//        dataList.add(DataModel("Title","Desc",R.drawable.meme1))
+        dataList.add(DataModel("Title","Desc",R.drawable.meme_icon))
 //        dataList.add(DataModel("Title","Desc",R.drawable.meme2))
 //        dataList.add(DataModel("Title","Desc",R.drawable.meme3))
 //        dataList.add(DataModel("Title","Desc",R.drawable.meme4))

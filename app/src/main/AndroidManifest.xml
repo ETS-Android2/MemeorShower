@@ -9,13 +9,13 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.MemeorShower">
-        <activity android:name=".ImageTemplate">
+        <activity android:name=".ImageTemplateActivity">
         </activity>
-        <activity android:name=".TextTemplate">
+        <activity android:name=".TextTemplateActivity">
         </activity>
-        <activity android:name=".MemeDatabase">
+        <activity android:name=".MemeDatabaseActivity">
         </activity>
-        <activity android:name=".MyProjects">
+        <activity android:name=".MyProjectsActivity">
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
