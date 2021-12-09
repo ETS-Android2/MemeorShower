@@ -1,4 +1,4 @@
-package com.example.testproject
+package com.example.memeorshower.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -13,12 +13,12 @@ class MemeDatabaseAdapter: RecyclerView.Adapter<MemeDatabaseAdapter.ViewHolder>(
     private var memeImages = intArrayOf(R.drawable.ic_launcher_background, R.drawable.ic_launcher_background, R.drawable.ic_launcher_background, R.drawable.ic_launcher_background)
     private var memeTitles = arrayOf("Meme1", "Meme2", "Meme3", "Meme4")
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemeDatabaseAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.meme_database_card_layout, parent, false)
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: MemeDatabaseAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.memeTitle.text = memeTitles[position]
         holder.memeImage.setImageResource(memeImages[position])
     }

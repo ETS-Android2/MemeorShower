@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.testproject.MemeDatabaseAdapter
+import com.example.memeorshower.adapter.MemeDatabaseAdapter
 
 class MemeDatabase : AppCompatActivity() {
     private var layoutManager: RecyclerView.LayoutManager?= null

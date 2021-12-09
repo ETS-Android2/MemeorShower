@@ -1,20 +1,14 @@
-package com.example.memeorshower
+package com.example.memeorshower.adapter
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-
-data class DataModel(
-    var title : String,
-    var desc : String,
-    var image : Int
-)
+import com.example.memeorshower.DataModel
+import com.example.memeorshower.R
 
 class ImageTemplateAdapter (var context: Context):
     RecyclerView.Adapter<ImageTemplateAdapter.ViewHolder>(){
@@ -38,7 +32,7 @@ class ImageTemplateAdapter (var context: Context):
 
     }
     // Usually involves inflating a layout from XML and returning the holder
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageTemplateAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         // Inflate the custom layout
         var view = LayoutInflater.from(parent.context).inflate(R.layout.meme_list_item, parent, false)
@@ -46,7 +40,7 @@ class ImageTemplateAdapter (var context: Context):
     }
 
     // Involves populating data into the item through holder
-    override fun onBindViewHolder(holder: ImageTemplateAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         // Get the data model based on position
         var data = dataList[position]
