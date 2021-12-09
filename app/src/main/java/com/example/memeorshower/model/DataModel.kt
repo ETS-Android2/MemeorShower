@@ -1,4 +1,4 @@
-package com.example.memeorshower
+package com.example.memeorshower.model
 
 data class DataModel(
     var title : String,

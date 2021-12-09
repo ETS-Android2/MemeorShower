@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.memeorshower.DataModel
+import com.example.memeorshower.model.DataModel
 import com.example.memeorshower.R
 
 class ImageTemplateAdapter (var context: Context):

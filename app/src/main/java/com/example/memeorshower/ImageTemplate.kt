@@ -6,6 +6,7 @@ import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.memeorshower.adapter.ImageTemplateAdapter
+import com.example.memeorshower.model.DataModel
 
 
 class ImageTemplate : AppCompatActivity() {
