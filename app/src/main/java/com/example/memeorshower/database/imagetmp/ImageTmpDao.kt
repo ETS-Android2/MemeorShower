@@ -12,7 +12,7 @@ interface ImageTmpDao {
     fun getAll(): List<ImageTmp>
 
     @Query("SELECT * FROM image_tmp_table WHERE id = :id ")
-    fun getByID(id: String): ImageTmp
+    fun getByID(id: Int): ImageTmp
 
     @Delete
     fun delete(imgtmp: ImageTmp)
