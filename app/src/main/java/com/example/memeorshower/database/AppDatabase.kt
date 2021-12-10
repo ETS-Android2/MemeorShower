@@ -9,7 +9,7 @@ import com.example.memeorshower.database.imagetmp.ImageTmpDao
 import com.example.memeorshower.database.texttmp.TextTmp
 import com.example.memeorshower.database.texttmp.TextTmpDao
 
-@Database(entities =[ImageTmp::class, TextTmp::class], version = 1)
+@Database(entities =arrayOf(ImageTmp::class, TextTmp::class), version = 1, exportSchema = false)
 abstract class AppDatabase: RoomDatabase() {
     abstract fun imagetmpDao(): ImageTmpDao
     abstract fun texttmpDao(): TextTmpDao
@@ -24,7 +24,8 @@ abstract class AppDatabase: RoomDatabase() {
                     context,
                     AppDatabase::class.java,
                     "app_database")
-                    .createFromAsset("database/memeorshower.db")
+//                    .createFromAsset("database/memeorshower.db")
+                    .allowMainThreadQueries()
                     .build()
                 INSTANCE = instance
 

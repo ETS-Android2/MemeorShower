@@ -3,7 +3,11 @@ package com.example.memeorshower
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProvider
+import com.example.memeorshower.database.texttmp.TextTmp
 import com.example.memeorshower.databinding.ActivityMainBinding
+import com.example.memeorshower.viewmodel.ImageTmpViewModel
+import com.example.memeorshower.viewmodel.TextTmpViewModel
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -32,6 +36,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun makeNewMeme() {
+        //        var mViewModel = ViewModelProvider(this).get(ImageTmpViewModel::class.java)
+//        mViewModel.addImage()
+        var mViewModel = ViewModelProvider(this).get(TextTmpViewModel::class.java)
+        val tt = TextTmp(0, "Helllllo")
+        mViewModel.addText(tt)
+
         val  intent = Intent(this, TextTemplateActivity::class.java)
         startActivity(intent)
     }

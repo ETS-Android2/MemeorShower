@@ -14,6 +14,7 @@ class TextTmpViewModel(application: Application): AndroidViewModel(application) 
     private val txtDao = AppDatabase.getDatabase(application).texttmpDao()
 
     init {
+        AppDatabase.getDatabase(application)
         readAllData = txtDao.getAll()
     }
 
