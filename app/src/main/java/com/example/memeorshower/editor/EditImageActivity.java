@@ -39,6 +39,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 
 import ja.burhanrashid52.photoeditor.OnPhotoEditorListener;
 import ja.burhanrashid52.photoeditor.PhotoEditor;
@@ -141,12 +142,15 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
 
         mSaveFileHelper = new FileSaveHelper(this);
 
-        TextStyleBuilder styleBuilder = new TextStyleBuilder();
-        styleBuilder.withTextColor(R.color.blue_color_picker);
         Intent intent = getIntent();
         String inputText = intent.getStringExtra("shower_thought_id");
-//        String inputText = "Hellooooo";
-        mPhotoEditor.addText(inputText, styleBuilder);
+        System.out.println(inputText);
+        if (!inputText.equals("null")){
+            System.out.println("hereeeeeeee");
+            TextStyleBuilder styleBuilder = new TextStyleBuilder();
+            styleBuilder.withTextColor(R.color.blue_color_picker);
+            mPhotoEditor.addText(inputText, styleBuilder);
+        }
 
     }
 
