@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.memeorshower.database.texttmp.TextTmp
 import com.example.memeorshower.databinding.ActivityMainBinding
 import com.example.memeorshower.viewmodel.ImageTmpViewModel
+import com.example.memeorshower.viewmodel.SavedProjectViewModel
 import com.example.memeorshower.viewmodel.TextTmpViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var myImageTmpViewModel: ImageTmpViewModel
     lateinit var myTextTmpViewModel: TextTmpViewModel
+    lateinit var mySavedProjectViewModel: SavedProjectViewModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         myImageTmpViewModel = ViewModelProvider(this).get(ImageTmpViewModel::class.java)
         myTextTmpViewModel = ViewModelProvider(this).get(TextTmpViewModel::class.java)
+        mySavedProjectViewModel = ViewModelProvider(this).get(SavedProjectViewModel::class.java)
 
         // todo: you have access to both view models, load your data in them.
 
