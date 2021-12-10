@@ -7,6 +7,6 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "text_tmp_table")
 data class TextTmp(
-    @PrimaryKey val id: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int,
     @NonNull @ColumnInfo(name = "text") val text: String
 )
