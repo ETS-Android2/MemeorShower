@@ -73,7 +73,7 @@ public class ShapeBSFragment extends BottomSheetDialogFragment implements SeekBa
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         rvColor.setLayoutManager(layoutManager);
-        rvColor.setHasFixedSize(true);
+//        rvColor.setHasFixedSize(true);
         ColorPickerAdapter colorPickerAdapter = new ColorPickerAdapter(getActivity());
         colorPickerAdapter.setOnColorPickerClickListener(colorCode -> {
             if (mProperties != null) {

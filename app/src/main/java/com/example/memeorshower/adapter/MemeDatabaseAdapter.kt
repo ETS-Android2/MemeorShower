@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.memeorshower.R
 
 class MemeDatabaseAdapter: RecyclerView.Adapter<MemeDatabaseAdapter.ViewHolder>() {
-    private var memeImages = intArrayOf(R.drawable.ic_launcher_background, R.drawable.ic_launcher_background, R.drawable.ic_launcher_background, R.drawable.ic_launcher_background)
+    private var memeImages = intArrayOf(R.drawable.meme_icon, R.drawable.meme_icon, R.drawable.meme_icon, R.drawable.meme_icon)
     private var memeTitles = arrayOf("Meme1", "Meme2", "Meme3", "Meme4")
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
