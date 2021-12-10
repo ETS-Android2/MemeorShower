@@ -133,7 +133,11 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         mPhotoEditor.setOnPhotoEditorListener(this);
 
         //Set Image Dynamically
-        mPhotoEditorView.getSource().setImageResource(R.drawable.paris_tower);
+        Bundle b = getIntent().getExtras();
+        int photoId = -1; // or other values
+        if(b != null)
+            photoId = b.getInt("photoId");
+        mPhotoEditorView.getSource().setImageResource(photoId);
 
         mSaveFileHelper = new FileSaveHelper(this);
     }

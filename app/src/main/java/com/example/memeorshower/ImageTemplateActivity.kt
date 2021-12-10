@@ -15,9 +15,10 @@ class ImageTemplateActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_image_template)
+        val showerThought = intent.getStringExtra("shower_thought_id")
         val image_lists = findViewById<View>(R.id.recyclerView) as RecyclerView
         image_lists.layoutManager = GridLayoutManager(applicationContext,2)
-        photoAdapter = ImageTemplateAdapter(applicationContext)
+        photoAdapter = ImageTemplateAdapter(applicationContext, showerThought.toString())
         image_lists.adapter = photoAdapter
 
 

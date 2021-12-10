@@ -1,5 +1,7 @@
 package com.example.memeorshower.editor.tools;
 
+import android.app.Activity;
+import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
