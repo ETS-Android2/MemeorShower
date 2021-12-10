@@ -1,10 +1,11 @@
 package com.example.memeorshower
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.ColorSpace
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.memeorshower.adapter.TextTemplateAdapter
@@ -12,6 +13,7 @@ import com.example.memeorshower.adapter.TextTemplateAdapter
 class TextTemplateActivity : AppCompatActivity() {
     lateinit var texts: ArrayList<String>
     lateinit var images: ArrayList<Int>
+    lateinit var showerThought: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,4 +52,5 @@ class TextTemplateActivity : AppCompatActivity() {
         val intent = Intent(this, ImageTemplateActivity::class.java)
         startActivity(intent)
     }
+
 }

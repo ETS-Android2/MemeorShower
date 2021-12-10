@@ -17,6 +17,8 @@
         </activity>
         <activity android:name=".MyProjectsActivity">
         </activity>
+        <activity android:name=".editor.EditImageActivity">
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
