@@ -140,7 +140,16 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         mPhotoEditorView.getSource().setImageResource(photoId);
 
         mSaveFileHelper = new FileSaveHelper(this);
+
+        TextStyleBuilder styleBuilder = new TextStyleBuilder();
+        styleBuilder.withTextColor(R.color.blue_color_picker);
+        Intent intent = getIntent();
+        String inputText = intent.getStringExtra("shower_thought_id");
+//        String inputText = "Hellooooo";
+        mPhotoEditor.addText(inputText, styleBuilder);
+
     }
+
 
     private void handleIntentImage(ImageView source) {
         Intent intent = getIntent();
@@ -437,7 +446,6 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
                 textEditorDialogFragment.setOnTextEditorListener((inputText, colorCode) -> {
                     final TextStyleBuilder styleBuilder = new TextStyleBuilder();
                     styleBuilder.withTextColor(colorCode);
-
                     mPhotoEditor.addText(inputText, styleBuilder);
                     mTxtCurrentTool.setText(R.string.label_text);
                 });
