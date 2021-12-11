@@ -7,10 +7,26 @@
         android:layout_height="match_parent"
         tools:context=".MyProjectsActivity">
     <TextView
-            android:text="My Projects"
+            android:text="@string/label_my_projects"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textView"
+            android:layout_height="wrap_content"
+            android:id="@+id/my_projects"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/my_projects_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/my_projects"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
