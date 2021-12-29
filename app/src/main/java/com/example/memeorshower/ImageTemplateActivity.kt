@@ -1,17 +1,25 @@
 package com.example.memeorshower
 
-import androidx.appcompat.app.AppCompatActivity
+import com.example.memeorshower.R
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.memeorshower.adapter.ImageTemplateAdapter
 import com.example.memeorshower.model.DataModel
+import com.example.memeorshower.viewmodel.ImageTmpViewModel
 
 
 class ImageTemplateActivity : AppCompatActivity() {
     private lateinit var  photoAdapter: ImageTemplateAdapter
     private var dataList = mutableListOf<DataModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_image_template)
@@ -20,7 +28,6 @@ class ImageTemplateActivity : AppCompatActivity() {
         image_lists.layoutManager = GridLayoutManager(applicationContext,2)
         photoAdapter = ImageTemplateAdapter(applicationContext, showerThought.toString())
         image_lists.adapter = photoAdapter
-
 
         // Initialize contacts
         // Create adapter passing in the sample user data
@@ -42,7 +49,6 @@ class ImageTemplateActivity : AppCompatActivity() {
 //        dataList.add(DataModel("Title","Desc",R.drawable.meme16))
 
         photoAdapter.setDataList(dataList)
-
 
     }
 }
