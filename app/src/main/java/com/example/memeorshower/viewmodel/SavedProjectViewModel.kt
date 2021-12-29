@@ -22,4 +22,8 @@ class SavedProjectViewModel(application: Application): AndroidViewModel(applicat
         }
     }
 
+    fun getProjects(): List<SavedProject>{
+        return readAllData;
+    }
+
 }

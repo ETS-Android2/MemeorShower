@@ -1,17 +1,28 @@
 package com.example.memeorshower.adapter
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.memeorshower.R
+import com.example.memeorshower.database.savedproject.SavedProject
 
-class MyProjectAdapter: RecyclerView.Adapter<MyProjectAdapter.ViewHolder>() {
-    private var projectImages = intArrayOf(R.drawable.meme_icon, R.drawable.meme_icon, R.drawable.meme_icon, R.drawable.meme_icon)
-    private var projectTitles = arrayOf("project1", "project2", "project3", "project4")
+
+class MyProjectAdapter(savedProjects: List<SavedProject>): RecyclerView.Adapter<MyProjectAdapter.ViewHolder>() {
+    private var projectImage = mutableListOf<Bitmap>()
+    private var projectDate = mutableListOf<String>()
+
+    init {
+        for (project in savedProjects){
+            val bmp = BitmapFactory.decodeByteArray(project.data, 0, project.data!!.size)
+            projectImage.add(bmp)
+            projectDate.add(project.date)
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.meme_database_card_layout, parent, false)
@@ -19,12 +30,12 @@ class MyProjectAdapter: RecyclerView.Adapter<MyProjectAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.projectTitle.text = projectTitles[position]
-        holder.projectImage.setImageResource(projectImages[position])
+        holder.projectTitle.text = projectDate[position]
+        holder.projectImage.setImageBitmap(projectImage[position])
     }
 
     override fun getItemCount(): Int {
-        return projectTitles.size
+        return projectImage.size
     }
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
