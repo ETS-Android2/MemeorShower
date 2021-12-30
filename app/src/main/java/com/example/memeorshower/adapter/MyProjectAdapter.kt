@@ -64,7 +64,7 @@ class MyProjectAdapter(savedProjects: List<SavedProject>): RecyclerView.Adapter<
             projectsImage[position].compress(Bitmap.CompressFormat.PNG, 90, stream)
             val image = stream.toByteArray()
             intent.putExtra("imageByteArray", image)
-            intent.putExtra("shower_thought_id", "")
+            intent.putExtra("shower_thought_id", "null")
             context.startActivity(intent)
         }
     }
