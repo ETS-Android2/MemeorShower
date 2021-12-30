@@ -1,12 +1,14 @@
-
 package com.example.memeorshower.editor;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -18,6 +20,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.app.AlertDialog;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -28,17 +31,21 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.transition.ChangeBounds;
 import androidx.transition.TransitionManager;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.memeorshower.R;
+import com.example.memeorshower.database.savedproject.SavedProject;
 import com.example.memeorshower.editor.base.BaseActivity;
 import com.example.memeorshower.editor.filters.FilterListener;
 import com.example.memeorshower.editor.filters.FilterViewAdapter;
 import com.example.memeorshower.editor.tools.EditingToolsAdapter;
 import com.example.memeorshower.editor.tools.ToolType;
+import com.example.memeorshower.viewmodel.SavedProjectViewModel;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 import ja.burhanrashid52.photoeditor.OnPhotoEditorListener;
@@ -67,6 +74,8 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
     private static final int PICK_REQUEST = 53;
     public static final String ACTION_NEXTGEN_EDIT = "action_nextgen_edit";
     public static final String PINCH_TEXT_SCALABLE_INTENT_KEY = "PINCH_TEXT_SCALABLE";
+
+    private SavedProjectViewModel mySavedProjectViewModel;
 
     PhotoEditor mPhotoEditor;
     private PhotoEditorView mPhotoEditorView;
@@ -134,15 +143,24 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         mPhotoEditor.setOnPhotoEditorListener(this);
 
         //Set Image Dynamically
-        Bundle b = getIntent().getExtras();
+        Intent intent = getIntent();
+        Bundle b = intent.getExtras();
+
         int photoId = -1; // or other values
+        byte [] photoArray;
         if(b != null)
             photoId = b.getInt("photoId");
-        mPhotoEditorView.getSource().setImageResource(photoId);
+            photoArray = intent.getByteArrayExtra("imageByteArray");
+            if (photoArray != null){
+                Bitmap bitmap = BitmapFactory.decodeByteArray(photoArray, 0, photoArray.length);
+                mPhotoEditorView.getSource().setImageBitmap(bitmap);
+            }
+            else if (photoId != -1)
+                mPhotoEditorView.getSource().setImageResource(photoId);
+            else
+                mPhotoEditorView.getSource().setImageResource(0);
 
         mSaveFileHelper = new FileSaveHelper(this);
-
-        Intent intent = getIntent();
         String inputText = intent.getStringExtra("shower_thought_id");
         System.out.println(inputText);
         if (!inputText.equals("null")){
@@ -151,6 +169,8 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
             styleBuilder.withTextColor(R.color.blue_color_picker);
             mPhotoEditor.addText(inputText, styleBuilder);
         }
+
+        mySavedProjectViewModel = new ViewModelProvider(this).get(SavedProjectViewModel.class);
 
     }
 
@@ -312,6 +332,7 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @SuppressLint("MissingPermission")
     private void saveImage() {
         final String fileName = System.currentTimeMillis() + ".png";
@@ -334,6 +355,31 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
                             showSnackbar("Image Saved Successfully");
                             mSaveImageUri = uri;
                             mPhotoEditorView.getSource().setImageURI(mSaveImageUri);
+                            InputStream iStream = null;
+                            try {
+                                iStream = getContentResolver().openInputStream(uri);
+
+                                ByteArrayOutputStream byteBuffer = new ByteArrayOutputStream();
+                                int bufferSize = 1024;
+                                byte[] buffer = new byte[bufferSize];
+
+                                int len = 0;
+                                while ((len = iStream.read(buffer)) != -1) {
+                                    byteBuffer.write(buffer, 0, len);
+                                }
+                                byte[] inputData = byteBuffer.toByteArray();
+
+                                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+                                LocalDateTime now = LocalDateTime.now();
+                                mySavedProjectViewModel.addProject(new SavedProject(0, inputData , "Project", dtf.format(now)));
+
+                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
+                            }
+                            catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
                         }
 
                         @Override
@@ -351,6 +397,21 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         } else {
             requestPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
         }
+
+    }
+
+
+    public byte[] getBytes(InputStream inputStream) throws IOException {
+        ByteArrayOutputStream byteBuffer = new ByteArrayOutputStream();
+        int bufferSize = 1024;
+        byte[] buffer = new byte[bufferSize];
+
+        int len = 0;
+        while ((len = inputStream.read(buffer)) != -1) {
+            byteBuffer.write(buffer, 0, len);
+        }
+        return byteBuffer.toByteArray();
+
     }
 
 
@@ -515,4 +576,3 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         }
     }
 }
-

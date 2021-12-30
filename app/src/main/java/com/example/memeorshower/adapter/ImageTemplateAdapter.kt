@@ -1,8 +1,9 @@
 package com.example.memeorshower.adapter
 
-import android.app.Activity
+
 import android.content.Context
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,9 +30,9 @@ class ImageTemplateAdapter (var context: Context , var showerThought:String):
         var desc: TextView
 
         init {
-            image = itemView.findViewById(R.id.image)
-            title = itemView.findViewById(R.id.title)
-            desc = itemView.findViewById(R.id.text)
+            image = itemView.findViewById(com.example.memeorshower.R.id.image)
+            title = itemView.findViewById(com.example.memeorshower.R.id.title)
+            desc = itemView.findViewById(com.example.memeorshower.R.id.text)
         }
 
 
@@ -40,7 +41,7 @@ class ImageTemplateAdapter (var context: Context , var showerThought:String):
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         // Inflate the custom layout
-        var view = LayoutInflater.from(parent.context).inflate(R.layout.meme_list_item, parent, false)
+        var view = LayoutInflater.from(parent.context).inflate(com.example.memeorshower.R.layout.meme_list_item, parent, false)
         return ViewHolder(view)
     }
 
@@ -55,6 +56,7 @@ class ImageTemplateAdapter (var context: Context , var showerThought:String):
         holder.image.setOnClickListener{
             val context = holder.itemView.context
             val intent = Intent(context, EditImageActivity::class.java)
+            //val bm = BitmapFactory.decodeResource(context.resources, com.example.memeorshower.R.drawable.meme_icon)
             intent.putExtra("photoId", data.image)
             intent.putExtra("shower_thought_id", showerThought)
             context.startActivity(intent)

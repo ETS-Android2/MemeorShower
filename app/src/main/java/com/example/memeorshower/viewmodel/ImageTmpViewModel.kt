@@ -23,4 +23,8 @@ class ImageTmpViewModel(application: Application): AndroidViewModel(application)
         }
     }
 
+    fun getAll(): List<ImageTmp>{
+        return readAllData
+    }
+
 }
