@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
@@ -142,15 +143,24 @@ public class EditImageActivity extends BaseActivity implements OnPhotoEditorList
         mPhotoEditor.setOnPhotoEditorListener(this);
 
         //Set Image Dynamically
-        Bundle b = getIntent().getExtras();
+        Intent intent = getIntent();
+        Bundle b = intent.getExtras();
+
         int photoId = -1; // or other values
+        byte [] photoArray;
         if(b != null)
             photoId = b.getInt("photoId");
-        mPhotoEditorView.getSource().setImageResource(photoId);
+            photoArray = intent.getByteArrayExtra("imageByteArray");
+            if (photoArray != null){
+                Bitmap bitmap = BitmapFactory.decodeByteArray(photoArray, 0, photoArray.length);
+                mPhotoEditorView.getSource().setImageBitmap(bitmap);
+            }
+            else if (photoId != -1)
+                mPhotoEditorView.getSource().setImageResource(photoId);
+            else
+                mPhotoEditorView.getSource().setImageResource(0);
 
         mSaveFileHelper = new FileSaveHelper(this);
-
-        Intent intent = getIntent();
         String inputText = intent.getStringExtra("shower_thought_id");
         System.out.println(inputText);
         if (!inputText.equals("null")){
