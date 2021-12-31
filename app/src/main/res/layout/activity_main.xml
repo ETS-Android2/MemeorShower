@@ -8,30 +8,34 @@
         tools:context=".MainActivity">
     <Button
             android:text="new"
-            android:layout_width="180dp"
+            android:layout_width="160dp"
             android:layout_height="80dp" android:id="@+id/NewButton"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="364dp" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:backgroundTint="#0090E4"/>
     <Button
             android:text="My Projects"
-            android:layout_width="180dp"
+            android:layout_width="160dp"
             android:layout_height="80dp" android:id="@+id/MyProjectButton"
             app:layout_constraintTop_toBottomOf="@+id/NewButton"
             app:layout_constraintBottom_toTopOf="@+id/DatabaseButton" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:backgroundTint="#03669F"/>
     <Button
             android:text="Database"
-            android:layout_width="180dp"
+            android:layout_width="160dp"
             android:layout_height="80dp" android:id="@+id/DatabaseButton"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="104dp" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:backgroundTint="#02446E"/>
+
     <ImageView
-            android:layout_width="259dp"
-            android:layout_height="274dp"
-            app:srcCompat="@drawable/meme_icon" android:id="@+id/imageView"
-            app:layout_constraintBottom_toTopOf="@+id/NewButton"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+        android:id="@+id/imageView"
+        android:layout_width="348dp"
+        android:layout_height="389dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/NewButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/in_logo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

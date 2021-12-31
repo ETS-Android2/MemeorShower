@@ -17,9 +17,27 @@
 -->
 
 
-![image](https://github.com/narsan/MemeorShower/blob/main/app/src/main/res/drawable/meme_icon.jpeg?s=100)
+<!-- ![image](https://github.com/narsan/MemeorShower/blob/change-logo/app/src/main/res/drawable/in_logo.jpg?s=100) -->
+<!-- ![image](https://user-images.githubusercontent.com/44080169/147836152-0525877c-80aa-4ecc-9de6-260de0bf9e0d.png) -->
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a >
+<!--     <img src="https://github.com/narsan/MemeorShower/blob/change-logo/app/src/main/res/drawable/in_logo.jpg" alt="Logo" width="300" height="300"> -->
+<!--     <img src="https://github.com/narsan/MemeorShower/blob/change-logo/app/src/main/res/drawable/out_logo.png" alt="Logo" width="300" height="300"> -->
+    <img src="https://user-images.githubusercontent.com/44080169/147836152-0525877c-80aa-4ecc-9de6-260de0bf9e0d.png" alt="Logo" width="500" height="550">
+  </a>
+<!--   <p align="center"> -->
+<!--     An awesome tool to create amazing meme projects! -->
+<!--     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a> -->
 
-
+<!--     <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    ·
+    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a> -->
+<!--   </p> -->
+</div>
 
 # MemeorShower
 An Android application developed using Kotlin.
