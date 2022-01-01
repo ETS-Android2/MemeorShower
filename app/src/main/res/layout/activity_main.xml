@@ -20,13 +20,17 @@
             app:layout_constraintTop_toBottomOf="@+id/NewButton"
             app:layout_constraintBottom_toTopOf="@+id/DatabaseButton" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:backgroundTint="#03669F"/>
+
     <Button
-            android:text="Database"
-            android:layout_width="160dp"
-            android:layout_height="80dp" android:id="@+id/DatabaseButton"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="104dp" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:backgroundTint="#02446E"/>
+        android:id="@+id/DatabaseButton"
+        android:layout_width="160dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="90dp"
+        android:text="Database"
+        app:backgroundTint="#02446E"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"

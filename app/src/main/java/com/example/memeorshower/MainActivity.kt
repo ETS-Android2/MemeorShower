@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        myImageTmpViewModel = ViewModelProvider(this).get(ImageTmpViewModel::class.java)
+        myImageTmpViewModel = ViewModelProvider(this).get(ImageTmpViewModel::class.java)
         myTextTmpViewModel = ViewModelProvider(this).get(TextTmpViewModel::class.java)
         mySavedProjectViewModel = ViewModelProvider(this).get(SavedProjectViewModel::class.java)
 
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         binding.DatabaseButton.setOnClickListener { showDatabase() }
 
         loadTextTmp()
-        //loadImageTmp()
+        loadImageTmp()
 
     }
 
@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity() {
             addImage(R.drawable.meme12, "Heart", "MemeTemplate")
             addImage(R.drawable.meme13, "SadFace", "MemeTemplate")
             addImage(R.drawable.meme14, "Math", "MemeTemplate")
-            addImage(R.drawable.meme16, "Title", "MemeTemplate")
+//            addImage(R.drawable.meme16, "Title", "MemeTemplate")
         }
 
     }

@@ -45,8 +45,8 @@ class ImageTemplateActivity : AppCompatActivity() {
         dataList.add(DataModel("Heart","MemeTemplate",R.drawable.meme12))
         dataList.add(DataModel("SadFace","MemeTemplate",R.drawable.meme13))
         dataList.add(DataModel("Math","MemeTemplate",R.drawable.meme14))
-        dataList.add(DataModel("Fall","MemeTemplate",R.drawable.meme10))
-        dataList.add(DataModel("Title","MemeTemplate",R.drawable.meme16))
+//        dataList.add(DataModel("Fall","MemeTemplate",R.drawable.meme10))
+//        dataList.add(DataModel("Title","MemeTemplate",R.drawable.meme16))
 
         photoAdapter.setDataList(dataList)
 
