@@ -144,8 +144,8 @@ Distributed under the GNU License. See `LICENSE.md` for more information.
 ### Team members
 (sorted in alphabetic order)
 
-- Narges Sodeifi: [@narsan](https://github.com/narsan)  -   [personal page](https://npourazin.github.io/)
-- Niki Pourazin: [@npourazin](https://github.com/npourazin)  -   [personal page](https://narsan.github.io/)
+- Narges Sodeifi: [@narsan](https://github.com/narsan)  -   [personal page](https://narsan.github.io/)
+- Niki Pourazin: [@npourazin](https://github.com/npourazin)  -   [personal page](https://npourazin.github.io/)
 - Mahshid Rahmani: [@artemis79](https://github.com/artemis79) 
 
 
