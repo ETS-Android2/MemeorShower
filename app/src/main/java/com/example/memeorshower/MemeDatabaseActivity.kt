@@ -14,12 +14,12 @@ class MemeDatabaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_meme_database)
-
-        layoutManager = LinearLayoutManager(this)
-        val recyclerView= findViewById<View>(R.id.meme_database_recycler_view) as RecyclerView
-        adapter = MemeDatabaseAdapter()
-        recyclerView.layoutManager = layoutManager
-        recyclerView.adapter = adapter
+//
+//        layoutManager = LinearLayoutManager(this)
+//        val recyclerView= findViewById<View>(R.id.meme_database_recycler_view) as RecyclerView
+//        adapter = MemeDatabaseAdapter()
+//        recyclerView.layoutManager = layoutManager
+//        recyclerView.adapter = adapter
     }
 
 }
