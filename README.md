@@ -160,6 +160,7 @@ Distributed under the GNU License. See `LICENSE.md` for more information.
 * [Google kotlin course](https://developer.android.com/courses/android-basics-kotlin/course)
 * [Source for meme templates](https://imgflip.com/memetemplates)
 * [Source for Showerthought templates](http://reddit.com/r/Showerthoughts)
+* [Source for meme database](https://github.com/D3vd/Meme_Api)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
