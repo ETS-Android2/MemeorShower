@@ -54,7 +54,7 @@ interface MarsApiService {
      * HTTP method
      */
 //    @Headers("Authorization: Client-ID {{clientId}}")
-    @GET("gimme/10")
+    @GET("gimme/30")
     suspend fun getPhotos(): DataL
 }
 
