@@ -23,4 +23,8 @@ class TextTmpViewModel(application: Application): AndroidViewModel(application) 
             txtDao.addText(txttmp)
         }
     }
+
+    fun getAll(): List<TextTmp>{
+        return readAllData
+    }
 }
